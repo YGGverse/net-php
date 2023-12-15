@@ -16,7 +16,7 @@ var_dump(
 );
 ```
 
-## Check hostname valid
+### Check hostname valid
 
 ```
 var_dump(
@@ -24,7 +24,7 @@ var_dump(
 );
 ```
 
-## Check record valid
+### Check record valid
 
 ```
 var_dump(
@@ -32,7 +32,7 @@ var_dump(
 );
 ```
 
-## Check record value valid
+### Check record value valid
 
 ```
 var_dump(
