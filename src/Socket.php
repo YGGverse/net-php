@@ -30,14 +30,19 @@ class Socket
 
     public static function isOpen(string $host, int $port = -1, ?float $timeout = null, int &$error_code = null, string &$error_message = null): bool
     {
-        return is_resource(
-            @fsockopen(
-                $host,
-                $port,
-                $error_code,
-                $error_message,
-                $timeout
-            )
-        );
+        if (self::isHost($host) && self::isPort($port))
+        {
+            return is_resource(
+                @fsockopen(
+                    $host,
+                    $port,
+                    $error_code,
+                    $error_message,
+                    $timeout
+                )
+            );
+        }
+
+        return false;
     }
 }
