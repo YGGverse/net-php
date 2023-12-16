@@ -8,7 +8,35 @@ Network Library for PHP with native Yggdrasil support
 
 ## Usage
 
-### Resolve records
+### Socket
+
+#### Check socket is open
+
+```
+var_dump(
+    \Yggverse\Net\Socket::isOpen('yo.index', 80)
+);
+```
+
+#### Check host valid
+
+```
+var_dump(
+    \Yggverse\Net\Dig::isHost('yo.index')
+);
+```
+
+#### Check port valid
+
+```
+var_dump(
+    \Yggverse\Net\Dig::isPort(80)
+);
+```
+
+### Dig
+
+#### Resolve records
 
 ```
 var_dump(
@@ -16,7 +44,7 @@ var_dump(
 );
 ```
 
-### Check hostname valid
+#### Check hostname valid
 
 ```
 var_dump(
@@ -24,7 +52,7 @@ var_dump(
 );
 ```
 
-### Check record valid
+#### Check record valid
 
 ```
 var_dump(
@@ -32,7 +60,7 @@ var_dump(
 );
 ```
 
-### Check record value valid
+#### Check record value valid
 
 ```
 var_dump(
