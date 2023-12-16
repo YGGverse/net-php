@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Yggverse\Net;
 
-class Port
+class Socket
 {
     public static function isHost(mixed $value): bool
     {
