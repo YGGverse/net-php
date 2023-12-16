@@ -36,15 +36,20 @@ class Socket
     {
         if (self::isHost($host) && self::isPort($port))
         {
-            return is_resource(
-                @fsockopen(
-                    $host,
-                    $port,
-                    $error_code,
-                    $error_message,
-                    $timeout
-                )
+            $connection = @fsockopen(
+                $host,
+                $port,
+                $error_code,
+                $error_message,
+                $timeout
             );
+
+            if (is_resource($connection))
+            {
+                return fclose(
+                    $connection
+                );
+            }
         }
 
         return false;
