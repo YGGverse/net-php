@@ -21,11 +21,15 @@ class Socket
 
     public static function isPort(mixed $value): bool
     {
-        $length = strlen(
-            $value
-        );
+        if (false === filter_var($value, FILTER_VALIDATE_INT))
+        {
+            return false;
+        }
 
-        return false !== filter_var($value, FILTER_VALIDATE_INT) && 0 < $length && 65536 > $length;
+        return
+        (
+            0 < $value && 65536 > $value
+        );
     }
 
     public static function isOpen(string $host, int $port = -1, ?float $timeout = null, int &$error_code = null, string &$error_message = null): bool
