@@ -16,19 +16,21 @@ class Dig
         ];
     }
 
-    public static function isHostName(string $hostname): bool
+    public static function isHostName(mixed $value): bool
     {
-        return false !== filter_var($hostname, FILTER_VALIDATE_DOMAIN, FILTER_FLAG_HOSTNAME);
+        return is_string($value) && false !== filter_var($value, FILTER_VALIDATE_DOMAIN, FILTER_FLAG_HOSTNAME);
     }
 
-    public static function isRecord(string $record): bool
+    public static function isRecord(mixed $value): bool
     {
-        return isset(self::_records()[$record]);
+        return is_string($value) && isset(self::_records()[$value]);
     }
 
-    public static function isRecordValue(string $record, string $value): bool
+    public static function isRecordValue(mixed $record, mixed $value): bool
     {
-        return isset(self::_records()[$record]) && self::_records()[$record]($value);
+        return is_string($record) &&
+               is_string($value)  &&
+               isset(self::_records()[$record]) && self::_records()[$record]($value);
     }
 
     public static function records(string $hostname, array $records, array &$result = [], array &$error = []): array
