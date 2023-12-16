@@ -1,10 +1,10 @@
 {
-    "name": "yggverse/dns",
+    "name": "yggverse/net",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Yggverse\\Dns\\": "src/"
+            "Yggverse\\Net\\": "src/"
         }
     },
     "require": {}

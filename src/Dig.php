@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yggverse\Dns;
+namespace Yggverse\Net;
 
 class Dig
 {

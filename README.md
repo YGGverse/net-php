@@ -1,10 +1,10 @@
-# dns-php
+# net-php
 
-DNS Library for PHP with native Yggdrasil support
+Network Library for PHP with native Yggdrasil support
 
 ## Install
 
-`composer require yggverse/dns`
+`composer require yggverse/net`
 
 ## Usage
 
@@ -12,7 +12,7 @@ DNS Library for PHP with native Yggdrasil support
 
 ```
 var_dump(
-    \Yggverse\Dns\Dig::records('yo.index', ['A', 'AAAA'])
+    \Yggverse\Net\Dig::records('yo.index', ['A', 'AAAA'])
 );
 ```
 
@@ -20,7 +20,7 @@ var_dump(
 
 ```
 var_dump(
-    \Yggverse\Dns\Dig::isHostName('yo.index')
+    \Yggverse\Net\Dig::isHostName('yo.index')
 );
 ```
 
@@ -28,7 +28,7 @@ var_dump(
 
 ```
 var_dump(
-    \Yggverse\Dns\Dig::isRecord('A')
+    \Yggverse\Net\Dig::isRecord('A')
 );
 ```
 
@@ -36,6 +36,6 @@ var_dump(
 
 ```
 var_dump(
-    \Yggverse\Dns\Dig::isRecordValue('A', '127.0.0.1')
+    \Yggverse\Net\Dig::isRecordValue('A', '127.0.0.1')
 );
 ```
