@@ -22,7 +22,7 @@ var_dump(
 
 ```
 var_dump(
-    \Yggverse\Net\Dig::isHost('yo.index')
+    \Yggverse\Net\Socket::isHost('yo.index')
 );
 ```
 
@@ -30,7 +30,7 @@ var_dump(
 
 ```
 var_dump(
-    \Yggverse\Net\Dig::isPort(80)
+    \Yggverse\Net\Socket::isPort(80)
 );
 ```
 
