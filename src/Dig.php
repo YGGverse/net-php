@@ -12,13 +12,14 @@ class Dig
         [
             'A'    => function(string $value): bool {return false !== filter_var($value, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4);},
             'AAAA' => function(string $value): bool {return false !== filter_var($value, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6);},
+            'SRV'  => function(string $value): bool {return (bool) preg_match('/^[\d]+\s[\d]+\s[\d]+\s[A-z0-9-\._]+$/', $value);},
             // ...
         ];
     }
 
-    public static function isHostName(mixed $value): bool
+    public static function isHostName(mixed $value, array $find = ['_'], array $replace = []): bool
     {
-        return is_string($value) && false !== filter_var($value, FILTER_VALIDATE_DOMAIN, FILTER_FLAG_HOSTNAME);
+        return is_string($value) && false !== filter_var(str_replace($find, $replace, $value), FILTER_VALIDATE_DOMAIN, FILTER_FLAG_HOSTNAME);
     }
 
     public static function isRecord(mixed $value): bool
