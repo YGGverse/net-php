@@ -67,3 +67,7 @@ var_dump(
     \Yggverse\Net\Dig::isRecordValue('A', '127.0.0.1')
 );
 ```
+
+## Integrations
+
+* [Network API with native Yggdrasil/IPv6 support](https://github.com/YGGverse/net-api)
