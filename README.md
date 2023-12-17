@@ -70,4 +70,4 @@ var_dump(
 
 ## Integrations
 
-* [Network API with native Yggdrasil/IPv6 support](https://github.com/YGGverse/net-api)
+* [Network API with native Yggdrasil/IPv6 support](https://github.com/YGGverse/web-api)
